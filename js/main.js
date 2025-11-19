@@ -1,20 +1,8 @@
-// Reveal cards on scroll
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("in");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll("[data-anim]").forEach(card => observer.observe(card));
-
-// Smooth scroll for internal links
-document.querySelectorAll("a[href^='#']").forEach(link => {
-  link.addEventListener("click", e => {
+// Smooth scroll for internal anchors
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function (e) {
     e.preventDefault();
-    const target = document.querySelector(link.getAttribute("href"));
-    target.scrollIntoView({ behavior: "smooth" });
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
