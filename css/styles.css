@@ -5,9 +5,9 @@
 */
 
 :root{
-  --dark: #223843;
-  --light: #EFF1F3;
-  --muted: #DBD3D8;
+  --dark: #433633;
+  --light: #F7F0F5;
+  --muted: #DECBB7;
   --radius: 12px;
   --max-width: 1100px;
 }
